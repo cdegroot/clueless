@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/cdegroot/oauth2_example.svg)](https://travis-ci.org/cdegroot/oauth2_example)
+
 # Google OAuth2/Phoenix Example Application
 
 > This is an example application showing how one can integrate with the
