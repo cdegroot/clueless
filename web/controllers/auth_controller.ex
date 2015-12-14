@@ -42,7 +42,7 @@ defmodule OAuth2Example.AuthController do
     |> redirect(to: "/")
   end
 
-  defp authorize_url!("google"),   do: Google.authorize_url!(scope: "profile")
+  defp authorize_url!("google"),   do: Google.authorize_url!(scope: "profile email", hd: "pagerduty.com")
   defp authorize_url!(_), do: raise "No matching provider available"
 
   defp get_token!("google", code),   do: Google.get_token!(code: code)
