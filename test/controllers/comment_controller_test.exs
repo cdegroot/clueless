@@ -6,7 +6,7 @@ defmodule Clueless.CommentControllerTest do
   @invalid_attrs %{}
 
   setup do
-    conn = conn()
+    conn = authenticated_conn()
     {:ok, conn: conn}
   end
 

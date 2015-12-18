@@ -26,6 +26,10 @@ defmodule Clueless.ConnCase do
 
       import Clueless.Router.Helpers
 
+      def authenticated_conn do
+        conn() |> put_private(:test_user, %{email: "foo@bar.com"})
+      end
+
       # The default endpoint for testing
       @endpoint Clueless.Endpoint
     end
@@ -38,4 +42,5 @@ defmodule Clueless.ConnCase do
 
     :ok
   end
+
 end

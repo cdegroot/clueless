@@ -41,7 +41,8 @@ defmodule Clueless.Mixfile do
      {:phoenix_html, "~> 2.2"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:cowboy, "~> 1.0"},
-     {:oauth2, "~> 0.5"}]
+     {:oauth2, "~> 0.5"},
+     {:mix_test_watch, "~> 0.2"}]
   end
 end
 

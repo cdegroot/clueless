@@ -56,7 +56,11 @@ defmodule Clueless.Router do
 
   # Returns true if we have a user.
   defp is_authenticated(conn, _) do
-    if is_nil(get_session(conn, :current_user)) do
+    user = case Mix.env do
+          :test -> conn.private[:test_user]
+          _     -> get_session(conn, :current_user)
+    end
+    if is_nil(user) do
         conn |> redirect(to: "/")
     else
         conn

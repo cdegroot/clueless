@@ -6,7 +6,7 @@ defmodule Clueless.IdeaTagControllerTest do
   @invalid_attrs %{}
 
   setup do
-    conn = conn()
+    conn = authenticated_conn()
     {:ok, conn: conn}
   end
 
@@ -24,11 +24,6 @@ defmodule Clueless.IdeaTagControllerTest do
     conn = post conn, idea_tag_path(conn, :create), idea_tag: @valid_attrs
     assert redirected_to(conn) == idea_tag_path(conn, :index)
     assert Repo.get_by(IdeaTag, @valid_attrs)
-  end
-
-  test "does not create resource and renders errors when data is invalid", %{conn: conn} do
-    conn = post conn, idea_tag_path(conn, :create), idea_tag: @invalid_attrs
-    assert html_response(conn, 200) =~ "New idea tag"
   end
 
   test "shows chosen resource", %{conn: conn} do
@@ -54,12 +49,6 @@ defmodule Clueless.IdeaTagControllerTest do
     conn = put conn, idea_tag_path(conn, :update, idea_tag), idea_tag: @valid_attrs
     assert redirected_to(conn) == idea_tag_path(conn, :show, idea_tag)
     assert Repo.get_by(IdeaTag, @valid_attrs)
-  end
-
-  test "does not update chosen resource and renders errors when data is invalid", %{conn: conn} do
-    idea_tag = Repo.insert! %IdeaTag{}
-    conn = put conn, idea_tag_path(conn, :update, idea_tag), idea_tag: @invalid_attrs
-    assert html_response(conn, 200) =~ "Edit idea tag"
   end
 
   test "deletes chosen resource", %{conn: conn} do

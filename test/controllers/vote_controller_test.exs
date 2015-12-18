@@ -6,7 +6,7 @@ defmodule Clueless.VoteControllerTest do
   @invalid_attrs %{}
 
   setup do
-    conn = conn()
+    conn = authenticated_conn()
     {:ok, conn: conn}
   end
 
@@ -24,11 +24,6 @@ defmodule Clueless.VoteControllerTest do
     conn = post conn, vote_path(conn, :create), vote: @valid_attrs
     assert redirected_to(conn) == vote_path(conn, :index)
     assert Repo.get_by(Vote, @valid_attrs)
-  end
-
-  test "does not create resource and renders errors when data is invalid", %{conn: conn} do
-    conn = post conn, vote_path(conn, :create), vote: @invalid_attrs
-    assert html_response(conn, 200) =~ "New vote"
   end
 
   test "shows chosen resource", %{conn: conn} do
@@ -54,12 +49,6 @@ defmodule Clueless.VoteControllerTest do
     conn = put conn, vote_path(conn, :update, vote), vote: @valid_attrs
     assert redirected_to(conn) == vote_path(conn, :show, vote)
     assert Repo.get_by(Vote, @valid_attrs)
-  end
-
-  test "does not update chosen resource and renders errors when data is invalid", %{conn: conn} do
-    vote = Repo.insert! %Vote{}
-    conn = put conn, vote_path(conn, :update, vote), vote: @invalid_attrs
-    assert html_response(conn, 200) =~ "Edit vote"
   end
 
   test "deletes chosen resource", %{conn: conn} do
