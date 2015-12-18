@@ -18,6 +18,13 @@ defmodule Clueless.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+
+    resources "/users", UserController
+    resources "/tags", TagController
+    resources "/ideas", IdeaController
+    resources "/ideas_tags", IdeaTagController
+    resources "/comments", CommentController
+    resources "/votes", VoteController
   end
 
   scope "/api", Clueless do

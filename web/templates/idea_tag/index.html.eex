@@ -1,0 +1,28 @@
+<h2>Listing ideas tags</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Idea</th>
+      <th>Tag</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for idea_tag <- @ideas_tags do %>
+    <tr>
+      <td><%= idea_tag.idea_id %></td>
+      <td><%= idea_tag.tag_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: idea_tag_path(@conn, :show, idea_tag), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: idea_tag_path(@conn, :edit, idea_tag), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: idea_tag_path(@conn, :delete, idea_tag), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New idea tag", to: idea_tag_path(@conn, :new) %>

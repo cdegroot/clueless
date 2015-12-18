@@ -1,0 +1,6 @@
+<h2>New idea tag</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: idea_tag_path(@conn, :create) %>
+
+<%= link "Back", to: idea_tag_path(@conn, :index) %>

@@ -1,13 +1,13 @@
-defmodule Clueless.User do
+defmodule Clueless.Tag do
   use Clueless.Web, :model
 
-  schema "users" do
-    field :email, :string
+  schema "tags" do
+    field :name, :string
 
     timestamps
   end
 
-  @required_fields ~w(email)
+  @required_fields ~w(name)
   @optional_fields ~w()
 
   @doc """

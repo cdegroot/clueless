@@ -1,0 +1,18 @@
+<h2>Show vote</h2>
+
+<ul>
+
+  <li>
+    <strong>User:</strong>
+    <%= @vote.user_id %>
+  </li>
+
+  <li>
+    <strong>Idea:</strong>
+    <%= @vote.idea_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: vote_path(@conn, :edit, @vote) %>
+<%= link "Back", to: vote_path(@conn, :index) %>

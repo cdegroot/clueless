@@ -1,0 +1,18 @@
+<h2>Show idea tag</h2>
+
+<ul>
+
+  <li>
+    <strong>Idea:</strong>
+    <%= @idea_tag.idea_id %>
+  </li>
+
+  <li>
+    <strong>Tag:</strong>
+    <%= @idea_tag.tag_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: idea_tag_path(@conn, :edit, @idea_tag) %>
+<%= link "Back", to: idea_tag_path(@conn, :index) %>
