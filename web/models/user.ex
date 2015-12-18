@@ -1,4 +1,4 @@
-defmodule OAuth2Example.User do
+defmodule Clueless.User do
   @moduledoc """
   The `current_user` is stored in the connection as a map
   with string keys.

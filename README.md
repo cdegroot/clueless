@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/cdegroot/oauth2_example.svg)](https://travis-ci.org/cdegroot/oauth2_example)
+[![Build Status](https://travis-ci.org/cdegroot/clueless.svg)](https://travis-ci.org/cdegroot/oauth2_example)
 
 # Google OAuth2/Phoenix Example Application
 
@@ -6,7 +6,7 @@
 > [OAuth2](https://github.com/scrogson/oauth2) library and
 > the [Phoenix](https://github.com/phoenixframework/phoenix) framework.
 
-It's basically a whittled-down version of the [generic OAuth2 example on Github](https://github.com/scrogson/oauth2_example),
+It's basically a whittled-down version of the [generic OAuth2 example on Github](https://github.com/scrogson/clueless),
 just leaving in Google because that's all I want to use and simpler is better :-)
 
 In case you want to use this template, create a file named ".google-auth-secrets" (which

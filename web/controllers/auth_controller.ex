@@ -1,5 +1,5 @@
-defmodule OAuth2Example.AuthController do
-  use OAuth2Example.Web, :controller
+defmodule Clueless.AuthController do
+  use Clueless.Web, :controller
 
   @doc """
   This action is reached via `/auth/:provider` and redirects to the OAuth2 provider

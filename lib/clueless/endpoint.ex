@@ -1,14 +1,14 @@
-defmodule OAuth2Example.Endpoint do
-  use Phoenix.Endpoint, otp_app: :oauth2_example
+defmodule Clueless.Endpoint do
+  use Phoenix.Endpoint, otp_app: :clueless
 
-  socket "/socket", OAuth2Example.UserSocket
+  socket "/socket", Clueless.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :oauth2_example, gzip: false,
+    at: "/", from: :clueless, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -32,9 +32,9 @@ defmodule OAuth2Example.Endpoint do
 
   plug Plug.Session,
     store: :cookie,
-    key: "_oauth2_example_key",
+    key: "_clueless_key",
     signing_salt: "TN3lMCf5"
 
-  plug OAuth2Example.Router
+  plug Clueless.Router
 end
 

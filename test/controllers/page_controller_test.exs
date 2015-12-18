@@ -1,5 +1,5 @@
-defmodule OAuth2Example.PageControllerTest do
-  use OAuth2Example.ConnCase
+defmodule Clueless.PageControllerTest do
+  use Clueless.ConnCase
 
   test "GET /" do
     conn = get conn(), "/"

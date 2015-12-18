@@ -1,3 +1,3 @@
-defmodule OAuth2Example.LayoutView do
-  use OAuth2Example.Web, :view
+defmodule Clueless.LayoutView do
+  use Clueless.Web, :view
 end

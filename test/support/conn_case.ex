@@ -1,4 +1,4 @@
-defmodule OAuth2Example.ConnCase do
+defmodule Clueless.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -20,20 +20,20 @@ defmodule OAuth2Example.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
-      alias OAuth2Example.Repo
+      alias Clueless.Repo
       import Ecto.Model
       import Ecto.Query, only: [from: 2]
 
-      import OAuth2Example.Router.Helpers
+      import Clueless.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint OAuth2Example.Endpoint
+      @endpoint Clueless.Endpoint
     end
   end
 
   setup tags do
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(OAuth2Example.Repo, [])
+      Ecto.Adapters.SQL.restart_test_transaction(Clueless.Repo, [])
     end
 
     :ok

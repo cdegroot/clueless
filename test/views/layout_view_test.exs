@@ -1,3 +1,3 @@
-defmodule OAuth2Example.LayoutViewTest do
-  use OAuth2Example.ConnCase, async: true
+defmodule Clueless.LayoutViewTest do
+  use Clueless.ConnCase, async: true
 end

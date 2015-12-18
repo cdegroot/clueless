@@ -1,12 +1,12 @@
-defmodule OAuth2Example.Web do
+defmodule Clueless.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use OAuth2Example.Web, :controller
-      use OAuth2Example.Web, :view
+      use Clueless.Web, :controller
+      use Clueless.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -24,19 +24,19 @@ defmodule OAuth2Example.Web do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: OAuth2Example
+      use Phoenix.Controller, namespace: Clueless
 
-      alias OAuth2Example.Repo
+      alias Clueless.Repo
       import Ecto.Model
       import Ecto.Query, only: [from: 1, from: 2]
 
-      import OAuth2Example.Router.Helpers
+      import Clueless.Router.Helpers
     end
   end
 
   def view do
     quote do
-      use Phoenix.View, root: "web/templates", namespace: OAuth2Example
+      use Phoenix.View, root: "web/templates", namespace: Clueless
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 2, view_module: 1]
@@ -44,7 +44,7 @@ defmodule OAuth2Example.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import OAuth2Example.Router.Helpers
+      import Clueless.Router.Helpers
     end
   end
 
@@ -58,7 +58,7 @@ defmodule OAuth2Example.Web do
     quote do
       use Phoenix.Channel
 
-      alias OAuth2Example.Repo
+      alias Clueless.Repo
       import Ecto.Model
       import Ecto.Query, only: [from: 1, from: 2]
 

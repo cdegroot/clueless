@@ -1,3 +1,3 @@
-defmodule OAuth2Example.PageViewTest do
-  use OAuth2Example.ConnCase, async: true
+defmodule Clueless.PageViewTest do
+  use Clueless.ConnCase, async: true
 end

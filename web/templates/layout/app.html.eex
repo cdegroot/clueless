@@ -20,14 +20,15 @@
       <p class="lead">
         This is an application to show an example of how to wire up
         <a href="https://github.com/scrogson/oauth2">OAuth2</a> with
-        <a href="https://github.com/phoenixframework/phoenix">Phoenix</a> using Google OAuth2.
+        <a href="https://github.com/phoenixframework/phoenix">Phoenix</a> specifically for
+        Google's implementation of the API.
       </p>
 
       <br>
       <br>
 
       <%= if @current_user do %>
-        <h2>Welcome, <%= @current_user.name %>!</h2>
+        <h2>Hello <%= @current_user.name %>.</h2>
         <img src="<%= @current_user.avatar %>" class="img-circle"/>
         <%= link "Logout", to: auth_path(@conn, :delete), method: :delete, class: "btn btn-danger" %>
       <% else %>

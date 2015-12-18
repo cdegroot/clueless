@@ -1,4 +1,4 @@
-defmodule OAuth2Example.ChannelCase do
+defmodule Clueless.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -20,19 +20,19 @@ defmodule OAuth2Example.ChannelCase do
       # Import conveniences for testing with channels
       use Phoenix.ChannelTest
 
-      alias OAuth2Example.Repo
+      alias Clueless.Repo
       import Ecto.Model
       import Ecto.Query, only: [from: 2]
 
 
       # The default endpoint for testing
-      @endpoint OAuth2Example.Endpoint
+      @endpoint Clueless.Endpoint
     end
   end
 
   setup tags do
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(OAuth2Example.Repo, [])
+      Ecto.Adapters.SQL.restart_test_transaction(Clueless.Repo, [])
     end
 
     :ok

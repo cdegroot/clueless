@@ -1,5 +1,5 @@
-defmodule OAuth2Example.ErrorView do
-  use OAuth2Example.Web, :view
+defmodule Clueless.ErrorView do
+  use Clueless.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"

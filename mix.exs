@@ -1,8 +1,8 @@
-defmodule OAuth2Example.Mixfile do
+defmodule Clueless.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :oauth2_example,
+    [app: :clueless,
      version: "0.0.1",
      elixir: "~> 1.0",
      elixirc_paths: elixirc_paths(Mix.env),
@@ -17,7 +17,7 @@ defmodule OAuth2Example.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [mod: {OAuth2Example, []},
+    [mod: {Clueless, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
                     :phoenix_ecto, :postgrex, :oauth2]]
   end

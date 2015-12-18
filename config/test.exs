@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :oauth2_example, OAuth2Example.Endpoint,
+config :clueless, Clueless.Endpoint,
   http: [port: 4001],
   server: false
 
@@ -13,11 +13,11 @@ config :logger, level: :warn
 config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
-config :oauth2_example, OAuth2Example.Repo,
+config :clueless, Clueless.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "oauth2_example_test",
+  database: "clueless_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
 

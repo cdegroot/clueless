@@ -1,3 +1,3 @@
-defmodule OAuth2Example.PageView do
-  use OAuth2Example.Web, :view
+defmodule Clueless.PageView do
+  use Clueless.Web, :view
 end

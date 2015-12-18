@@ -6,16 +6,16 @@
 use Mix.Config
 
 # Configures the namespace used by Phoenix generators
-config :oauth2_example,
-  app_namespace: OAuth2Example
+config :clueless,
+  app_namespace: Clueless
 
 # Configures the endpoint
-config :oauth2_example, OAuth2Example.Endpoint,
+config :clueless, Clueless.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
   secret_key_base: "zWoDIUN+sA1X958CxqY38CE42MrplMBZtnCOs+d1DoE05sJ++vfrrAU8OKm3JPL+",
   render_errors: [accepts: ~w(html json)],
-  pubsub: [name: OAuth2Example.PubSub,
+  pubsub: [name: Clueless.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

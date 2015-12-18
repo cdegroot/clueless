@@ -1,4 +1,4 @@
-defmodule OAuth2ExampleTest do
+defmodule CluelessTest do
   use ExUnit.Case
 
   test "the truth" do

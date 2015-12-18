@@ -1,5 +1,5 @@
-defmodule OAuth2Example.Router do
-  use OAuth2Example.Web, :router
+defmodule Clueless.Router do
+  use Clueless.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -10,13 +10,21 @@ defmodule OAuth2Example.Router do
     plug :assign_current_user
   end
 
-  scope "/", OAuth2Example do
+  pipeline :api do
+    plug :accepts, ["json"]
+  end
+
+  scope "/", Clueless do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
   end
 
-  scope "/auth", OAuth2Example do
+  scope "/api", Clueless do
+    pipe_through :api
+  end
+
+  scope "/auth", Clueless do
     pipe_through :browser
 
     get "/:provider", AuthController, :index
