@@ -10,6 +10,10 @@ defmodule Clueless.Router do
     plug :assign_current_user
   end
 
+  pipeline :authenticated_only do
+    plug :is_authenticated
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -18,14 +22,18 @@ defmodule Clueless.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    scope "/app" do
+      pipe_through :is_authenticated
 
-    resources "/users", UserController
-    resources "/tags", TagController
-    resources "/ideas", IdeaController
-    resources "/ideas_tags", IdeaTagController
-    resources "/comments", CommentController
-    resources "/votes", VoteController
+      resources "/users", UserController
+      resources "/tags", TagController
+      resources "/ideas", IdeaController
+      resources "/ideas_tags", IdeaTagController
+      resources "/comments", CommentController
+      resources "/votes", VoteController
+    end
   end
+
 
   scope "/api", Clueless do
     pipe_through :api
@@ -44,5 +52,14 @@ defmodule Clueless.Router do
   # `@current_user`.
   defp assign_current_user(conn, _) do
     assign(conn, :current_user, get_session(conn, :current_user))
+  end
+
+  # Returns true if we have a user.
+  defp is_authenticated(conn, _) do
+    if is_nil(get_session(conn, :current_user)) do
+        conn |> redirect(to: "/")
+    else
+        conn
+    end
   end
 end
