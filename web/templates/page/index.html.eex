@@ -1,4 +1,7 @@
 <div class="jumbotron">
   <h1>Clueless</h1>
   <p>This is Clueless, an app for when you're clueless about what to do on a Hackday.</p>
+  <%= unless @current_user do %>
+    <p><a href="<%= auth_path @conn, :index, "google" %>">Sign in with Google</a> to start.</p>
+  <% end %>
 </div>

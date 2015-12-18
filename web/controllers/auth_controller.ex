@@ -29,6 +29,9 @@ defmodule Clueless.AuthController do
     # Request the user's data with the access token
     user = get_user!(provider, token)
 
+    # Check whether the user exists
+    store_if_new_user(user)
+
     # Store the user in the session under `:current_user` and redirect to /.
     # In most cases, we'd probably just store the user's ID that can be used
     # to fetch from the database. In this case, since this example app has no
@@ -54,6 +57,16 @@ defmodule Clueless.AuthController do
     IO.puts "Got stuffs from google"
     IO.inspect user
     IO.puts "==="
-    %{name: user["name"], avatar: user["picture"]}
+    %{name: user["name"], avatar: user["picture"], email: user["email"]}
+  end
+
+  # TODO probably doesn't belong in controller. But then I don't grok
+  # the direct interaction with Repo everywhere anyway.
+  defp store_if_new_user(user) do
+    alias Clueless.User
+    email = user.email
+    unless Repo.get_by(User, email: email) do
+      Repo.insert(User.changeset(%User{}, %{email: email}))
+    end
   end
 end
