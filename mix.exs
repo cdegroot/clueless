@@ -42,7 +42,7 @@ defmodule Clueless.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:cowboy, "~> 1.0"},
      {:oauth2, "~> 0.5"},
-     {:mix_test_watch, "~> 0.2"}]
+     {:mix_test_watch, git: "https://github.com/behe/mix-test.watch", branch: "forward_args", only: :dev}]
   end
 end
 
